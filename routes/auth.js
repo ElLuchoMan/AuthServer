@@ -1,13 +1,9 @@
 const { Router } = require('express');
+const { crearUsuario } = require('./controllers/auth');
 
 const router = Router();
 //Crear nuevo usuario
-router.post('/new', (req, res) => {
-    return res.json({
-        ok: true,
-        msg: 'Crear usuario /new'
-    });
-});
+router.post('/new', crearUsuario);
 //Login usuario
 router.post('/', (req, res) => {
     return res.json({
@@ -16,7 +12,7 @@ router.post('/', (req, res) => {
     });
 });
 //Validar Token
-router.get('/review', (req, res) => {
+router.get('/renew', (req, res) => {
     return res.json({
         ok: true,
         msg: 'Validar token'
