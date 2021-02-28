@@ -4,7 +4,7 @@ const crearUsuario = async (req, res) => {
     const { email, name, password } = req.body;
     try {
         //verificar si no existe un correo igual
-        let usuario = await Usuario.findOne({ email });
+        const usuario = await Usuario.findOne({ email });
         if (usuario) {
             return res.status(400).json({
                 ok: false,
@@ -12,13 +12,13 @@ const crearUsuario = async (req, res) => {
             })
         }
         //Crear usuario con el modelo 
-        usuario = new Usuario(req.body);
+        const dbUser = new Usuario(req.body);
         //Encriptar la contraseña con Hash
 
         //Generar JWT
 
         //Crear usuario de DB
-   
+       await dbUser.save();
         //Generar respuesta
 
 
