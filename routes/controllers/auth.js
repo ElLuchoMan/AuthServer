@@ -62,7 +62,7 @@ const loginUsuario = async (req, res) => {
         return res.json({
             ok: true,
             uid: dbUser.id,
-            name:dbUser.name,
+            name: dbUser.name,
             token
         })
     } catch (error) {
@@ -73,10 +73,14 @@ const loginUsuario = async (req, res) => {
         });
     }
 }
-const revalidarToken = (req, res) => {
+const revalidarToken = async (req, res = response) => {
+    const { uid, name } = req;
+    //Generar JWT
+    const token = await generarJWT(uid, name);
     return res.json({
         ok: true,
-        msg: 'Validar token'
+        uid,
+        token
     });
 }
 module.exports = { crearUsuario, loginUsuario, revalidarToken }
