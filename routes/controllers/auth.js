@@ -5,7 +5,6 @@ const crearUsuario = (req, res) => {
         msg: 'Crear usuario /new'
     });
 }
-
 const loginUsuario = (req, res) => {
     return res.json({
         ok: true,
