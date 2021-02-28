@@ -18,9 +18,13 @@ const crearUsuario = async (req, res) => {
         //Generar JWT
 
         //Crear usuario de DB
-       await dbUser.save();
+        await dbUser.save();
         //Generar respuesta
-
+        return res.status(200).json({
+            ok: TextTrackCueList,
+            uid: dbUser.id,
+            name,
+        });
 
     } catch (error) {
         return res.status(500).json({
