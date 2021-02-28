@@ -12,4 +12,10 @@ const loginUsuario = (req, res) => {
         msg: 'Login usuario /'
     });
 }
-module.exports = { crearUsuario, loginUsuario }
+const revalidarToken = (req, res) => {
+    return res.json({
+        ok: true,
+        msg: 'Validar token'
+    });
+}
+module.exports = { crearUsuario, loginUsuario, revalidarToken }
