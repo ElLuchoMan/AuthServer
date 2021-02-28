@@ -4,14 +4,12 @@ const app = express();
 
 //GET
 app.get('/', (req, resp) => {
-    console.log('Holi jeje');
-    resp.json(
-    {
-        ok: true,
-            msg : 'Holi vida♥',
-                uid : 3
-    }
-    );
+    resp.status(500).json(
+        {
+            ok: true,
+            msg: 'Holi vida♥',
+            uid: 3
+        });
 
 });
 
