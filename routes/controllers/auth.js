@@ -9,6 +9,9 @@ const crearUsuario = (req, res) => {
     });
 }
 const loginUsuario = (req, res) => {
+    const { email, password } = req.body;
+    console.log(email, password);
+
     return res.json({
         ok: true,
         msg: 'Login usuario /'
