@@ -12,7 +12,7 @@ const crearUsuario = async (req, res) => {
             })
         }
         //Crear usuario con el modelo 
-      
+        usuario = new Usuario(req.body);
         //Encriptar la contraseña con Hash
 
         //Generar JWT
